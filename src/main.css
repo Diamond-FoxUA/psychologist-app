@@ -10,7 +10,7 @@
 [data-theme="green"] {
   --main-color: #54be96;
   --secondary-color: #54be9633;
-  --warning-color: ##bf7954;
+  --warning-color: #bf7954;
   --error-color: #bf5455;
 }
 [data-theme="blue"] {
@@ -23,7 +23,7 @@
   --main-color: #fc832c;
   --secondary-color: #fc832c33;
   --warning-color: #fcc02b;
-  --error-color: ##fc452b;
+  --error-color: #fc452b;
 }
 
 body {
