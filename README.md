@@ -1,53 +1,75 @@
-# Psychologist App
+# React + TypeScript + Vite
 
-A responsive web app to explore and book appointments with psychologists. Users can register, log in, add favorites, and schedule consultations.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Live – (soon)
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Tech Stack
-- **Frontend:** React, React Router, React Hook Form, Yup  
-- **Database & Auth:** Firebase (Realtime Database & Authentication)  
-- **Styling:** CSS, responsive (320px–1440px)  
-- **Bundler:** Vite
-- **Deployment:** GitHub Pages
+## React Compiler
 
----
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-## Features
-- Browse psychologists with details (name, avatar, experience, reviews, price, rating, license, specialization, initial consultation, about)  
-- Sort by name, price, rating  
-- Add/remove favorites (saved across reloads)  
-- Read more for detailed info and reviews  
-- Make an appointment via modal form  
-- Authentication with registration/login/logout  
-- Multiple color themes (green, blue, orange) with theme switcher
+Note: This will impact Vite dev & build performances.
 
----
+## Expanding the ESLint configuration
 
-## Routing
-- `/` → Home  
-- `/psychologists` → Psychologists list  
-- `/favorites` → Favorites (private)
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-[React Router Documentation](https://reactrouter.com/en/main)
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
----
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-## Getting Started
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-git clone https://github.com/yourusername/psychologist-app.git
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-cd psychologist-app
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-npm install
-
-npm run dev
-
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-## License
-
-- MIT License
