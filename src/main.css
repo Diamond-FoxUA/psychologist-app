@@ -42,7 +42,30 @@ h1 {
   color: var(--black-color);
 }
 
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 .italic {
   font-style: italic;
   color: var(--main-color);
+}
+
+.accent {
+  color: var(--main-color);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    padding: 0 128px;
+  }
 }
