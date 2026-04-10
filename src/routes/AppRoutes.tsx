@@ -3,10 +3,10 @@ import { Suspense, lazy } from "react";
 
 import { PATHS } from "../variables";
 
-const Home = lazy(() => import("../pages/public/Home"));
-const Psychologists = lazy(() => import("../pages/public/Psychologists"));
-const Favourites = lazy(() => import("../pages/private/Favorites"));
-const NotFound = lazy(() => import("../pages/public/NotFound"));
+const Home = lazy(() => import("../pages/Home"));
+const Psychologists = lazy(() => import("../pages/Psychologists"));
+const Favourites = lazy(() => import("../pages/Favorites"));
+const NotFound = lazy(() => import("../pages/NotFound"));
 
 export default function AppRoutes() {
   return (
