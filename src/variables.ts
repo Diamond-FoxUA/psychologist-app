@@ -1,5 +1,5 @@
 export const PATHS = {
-  home: "/",
-  psychologists: "/psychologists",
-  favourites: "/favourites",
+  home: "",
+  psychologists: "psychologists",
+  favourites: "favourites",
 };
