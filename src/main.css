@@ -5,11 +5,13 @@
 
   --black-color: #191a15;
   --gray-color: #191a150d;
+  --white-color: #fbfbfb;
 }
 
 [data-theme="green"] {
   --main-color: #54be96;
   --secondary-color: #54be9633;
+  --main-darker-color: #36a379;
   --warning-color: #bf7954;
   --error-color: #bf5455;
 }
@@ -56,6 +58,61 @@ h1 {
 
 .accent {
   color: var(--main-color);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+
+  border: 1px solid transparent;
+  padding: 14px 32px;
+  border-radius: 30px;
+
+  transition:
+    color 300ms ease-in-out,
+    background-color 300ms ease-in-out,
+    border-color 300ms ease-in-out,
+    opacity 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.btn:active,
+.btn:disabled {
+  opacity: 50%;
+}
+
+.btn-primary {
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--main-darker-color);
+}
+
+.btn-secondary {
+  color: var(--black-color);
+  border-color: rgba(25, 26, 21, 0.2);
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  color: var(--white-color);
+  background-color: var(--main-color);
+  border-color: transparent;
 }
 
 @media screen and (min-width: 768px) {
