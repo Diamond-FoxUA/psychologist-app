@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.logo {
+  display: flex;
+
+  text-align: center;
+  color: var(--black-color);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+
+  padding: 34px 0;
+  cursor: pointer;
+  transition: transform 300ms ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.burgerBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 25px 0;
+  background-color: transparent;
+  border-color: transparent;
+
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authBtns {
+  display: none;
+}
+
+.authBtn {
+  width: 153px;
+}
+
+@media screen and (min-width: 1440px) {
+  .burgerBtn {
+    display: none;
+  }
+  .authBtns {
+    display: flex;
+    gap: 8px;
+  }
+}
