@@ -15,6 +15,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
+      type="button"
       onClick={onClick}
       disabled={disabled}
       className={`btn btn-${variant} ${className}`}

@@ -1,0 +1,176 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 595px;
+}
+
+.paragraph {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: var(--black-color);
+
+  max-width: 510px;
+  margin-bottom: 20px;
+}
+
+.imageWrapper {
+  position: relative;
+  background-color: silver;
+}
+
+.squareSmall {
+  position: absolute;
+  top: 30%;
+  left: -15px;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+
+  background-color: #4535af;
+  transform: rotate(-15deg) scale(0.7);
+}
+
+.squareSmall .icon {
+  position: relative;
+  width: 17px;
+  fill: var(--white-color);
+
+  transform: rotate(15deg);
+}
+
+.squareMedium {
+  position: absolute;
+  top: 38px;
+  right: -8px;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+
+  background-color: #fbc75e;
+  transform: rotate(15deg);
+}
+
+.squareMedium .icon {
+  fill: #fbfbfb;
+  width: 25px;
+  height: 25px;
+
+  transform: rotate(-15deg);
+}
+
+.rectangle {
+  position: absolute;
+  bottom: 30px;
+  left: -10px;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  border-radius: 20px;
+  padding: 12px;
+
+  background-color: var(--main-color);
+}
+
+.squareLarge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 54px;
+  height: 54px;
+  border-radius: 13px;
+  background-color: #fbfbfb;
+}
+
+.squareLarge .icon {
+  fill: var(--main-color);
+  width: 30px;
+  height: 30px;
+}
+
+.rectangleText {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(251, 251, 251, 0.5);
+}
+
+.rectangleText p:last-child {
+  font-weight: 700;
+  font-size: 24px;
+  color: #fbfbfb;
+  margin-top: 10px;
+}
+
+.linkBtn {
+  gap: 18px;
+  height: 60px;
+}
+
+.linkBtn .icon {
+  position: relative;
+  top: 3px;
+  fill: var(--white-color);
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    gap: 125px;
+  }
+
+  .rectangle {
+    left: -102px;
+    bottom: 75px;
+    padding: 32px;
+  }
+
+  .squareSmall {
+    top: 40%;
+    left: -30px;
+    transform: rotate(-15deg);
+  }
+
+  .squareMedium {
+    width: 48px;
+    height: 48px;
+    right: -30px;
+  }
+
+  .linkBtn {
+    max-width: 235px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .contentWrapper {
+    padding-top: 48px;
+  }
+}

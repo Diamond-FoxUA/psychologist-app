@@ -1,0 +1,52 @@
+.navbar {
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .navbar {
+    display: block;
+  }
+
+  .navList {
+    display: flex;
+    gap: 40px;
+  }
+
+  .navListItem {
+    position: relative;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    letter-spacing: -0.01em;
+    color: var(--black-color);
+
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .navListItem:active {
+    opacity: 50%;
+  }
+
+  .navListItem::after {
+    position: absolute;
+    content: "";
+
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    bottom: -12px;
+    left: 50%;
+    background-color: transparent;
+
+    transition: background-color 300ms ease-in-out;
+    transform: translateX(-50%);
+  }
+
+  .navListItem:hover::after {
+    background-color: var(--main-color);
+  }
+
+  .navLink {
+    padding: 36px 0;
+  }
+}
