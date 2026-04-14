@@ -4,13 +4,22 @@ import Logo from "../../Logo/Logo";
 import NavBar from "../../Navbar/Navbar";
 import Button from "../../Button/Button";
 
+import { useAuth } from "../../../hooks/useAuth";
+
 import type { ModalType } from "../../../types/modal";
+import { logout } from "../../../services/auth";
+import { toast } from "sonner";
 interface HeaderProps {
   setModal: (type: ModalType) => void;
 }
 
-export default function Header({ setModal } : HeaderProps) {
-  const isLoggedIn = false;
+export default function Header({ setModal }: HeaderProps) {
+  const { user } = useAuth();
+
+  const handleLogout = async () => {
+    await logout();
+    toast.success("Logout successfully!");
+  };
 
   return (
     <>
@@ -29,7 +38,7 @@ export default function Header({ setModal } : HeaderProps) {
             </svg>
           </button>
 
-          {!isLoggedIn && (
+          {!user && (
             <div className={css.authBtns}>
               <Button
                 onClick={() => setModal("login")}
@@ -38,8 +47,27 @@ export default function Header({ setModal } : HeaderProps) {
               >
                 Log in
               </Button>
-              <Button onClick={() => setModal("register")} className={css.authBtn}>
+              <Button
+                onClick={() => setModal("register")}
+                className={css.authBtn}
+              >
                 Register
+              </Button>
+            </div>
+          )}
+
+          {user && (
+            <div className={css.userMenu}>
+              <div className={css.profile}>
+                <span className={css.avatar}>
+                  <svg className={css.userIcon}>
+                    <use href="/sprite.svg#icon-user"></use>
+                  </svg>
+                </span>
+                <p className={css.username}>{user.displayName}</p>
+              </div>
+              <Button variant="secondary" onClick={handleLogout}>
+                Log out
               </Button>
             </div>
           )}

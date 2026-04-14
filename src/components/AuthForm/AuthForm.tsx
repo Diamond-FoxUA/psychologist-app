@@ -39,6 +39,7 @@ const loginSchema = Yup.object().shape({
 export default function AuthForm({ type, onSuccess }: AuthFormProps) {
   const isRegister = type === "register";
   const validationSchema = isRegister ? registerSchema : loginSchema;
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -54,9 +55,15 @@ export default function AuthForm({ type, onSuccess }: AuthFormProps) {
   const onSubmit = async (data: FormValues) => {
     try {
       if (isRegister) {
+        setIsLoading(true);
+
         await registerUser(data.email, data.password, data.username || "");
+        toast.success("Welcome!");
       } else {
+        setIsLoading(true);
+
         await loginUser(data.email, data.password);
+        toast.success("Welcome back!");
       }
 
       onSuccess();
@@ -67,6 +74,8 @@ export default function AuthForm({ type, onSuccess }: AuthFormProps) {
       } else {
         toast.error("Something went wrong");
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -116,7 +125,7 @@ export default function AuthForm({ type, onSuccess }: AuthFormProps) {
           </label>
           <input
             className={css.input}
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="password"
             placeholder="Password"
             {...register("password")}
@@ -146,7 +155,7 @@ export default function AuthForm({ type, onSuccess }: AuthFormProps) {
       </div>
 
       <Button className={css.submitBtn} type={"submit"}>
-        {isRegister ? "Sign Up" : "Log In"}
+        {isLoading ? "Loading..." : isRegister ? "Sign Up" : "Log In"}
       </Button>
     </form>
   );

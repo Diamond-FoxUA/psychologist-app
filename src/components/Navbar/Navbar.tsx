@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import { PATHS } from "../../variables";
 
 import css from "./Navbar.module.css";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function NavBar() {
-  const isLoggedIn = false;
+  const { user } = useAuth();
 
   return (
     <nav className={css.navbar}>
@@ -19,7 +20,7 @@ export default function NavBar() {
             Psychologists
           </Link>
         </li>
-        {isLoggedIn && (
+        {user && (
           <li className={css.navListItem}>
             <Link className={css.navLink} to={PATHS.favourites}>
               Favourites
