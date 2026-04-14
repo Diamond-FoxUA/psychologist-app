@@ -3,6 +3,7 @@ import css from "./Header.module.css";
 import Logo from "../../Logo/Logo";
 import NavBar from "../../Navbar/Navbar";
 import Button from "../../Button/Button";
+import ThemeBtn from "../../ThemeBtn/ThemeBtn";
 
 import { useAuth } from "../../../hooks/useAuth";
 
@@ -53,6 +54,7 @@ export default function Header({ setModal }: HeaderProps) {
               >
                 Register
               </Button>
+              <ThemeBtn />
             </div>
           )}
 
@@ -69,6 +71,7 @@ export default function Header({ setModal }: HeaderProps) {
               <Button variant="secondary" onClick={handleLogout}>
                 Log out
               </Button>
+              <ThemeBtn />
             </div>
           )}
         </div>

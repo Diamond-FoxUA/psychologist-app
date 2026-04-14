@@ -1,7 +1,7 @@
 import { createContext } from "react";
 export type Theme = "green" | "blue" | "orange";
 
-type ThemeContextType = {
+export type ThemeContextType = {
   theme: Theme;
   setTheme: (theme: Theme) => void;
 };

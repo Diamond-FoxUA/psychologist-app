@@ -1,12 +1,17 @@
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 
 import css from "./MobileMenu.module.css";
+import { toast } from "sonner";
+import { useAuth } from "../../hooks/useAuth";
+
 import { PATHS } from "../../variables";
 import Logo from "../Logo/Logo";
-import { createPortal } from "react-dom";
 import Button from "../Button/Button";
+import ThemeBtn from "../ThemeBtn/ThemeBtn";
 
 import type { ModalType } from "../../types/modal";
+import { logout as logoutUser } from "../../services/auth";
 
 interface MobileMenuProps {
   onClose: () => void;
@@ -14,10 +19,17 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ onClose, setModal }: MobileMenuProps) {
-  const isLoggedIn = false;
+  const { user } = useAuth();
+
+  const handleLogout = async () => {
+    await logoutUser();
+
+    onClose();
+    toast.success("Logout successfully!");
+  };
 
   return createPortal(
-    <div className={`container ${css.container}`}>
+    <div className={`container`}>
       <div className={css.container}>
         <div className={css.header}>
           <Logo />
@@ -48,7 +60,7 @@ export default function MobileMenu({ onClose, setModal }: MobileMenuProps) {
                 Psychologists
               </Link>
             </li>
-            {isLoggedIn && (
+            {user && (
               <li className={css.navListItem}>
                 <Link
                   onClick={onClose}
@@ -62,7 +74,7 @@ export default function MobileMenu({ onClose, setModal }: MobileMenuProps) {
           </ul>
         </nav>
 
-        {!isLoggedIn && (
+        {!user && (
           <div className={css.authBtns}>
             <Button
               onClick={() => {
@@ -83,6 +95,23 @@ export default function MobileMenu({ onClose, setModal }: MobileMenuProps) {
             >
               Register
             </Button>
+          </div>
+        )}
+
+        {user && (
+          <div className={`container ${css.userMenu}`}>
+            <Button className={css.logoutBtn} variant="secondary" onClick={handleLogout}>
+              Log out
+            </Button>
+            <div className={css.profile}>
+              <span className={css.avatar}>
+                <svg className={css.userIcon}>
+                  <use href="/sprite.svg#icon-user"></use>
+                </svg>
+              </span>
+              <p className={css.username}>{user.displayName}</p>
+              <ThemeBtn />
+            </div>
           </div>
         )}
       </div>

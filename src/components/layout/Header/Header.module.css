@@ -40,10 +40,7 @@
 }
 
 .userMenu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 28px;
+  display: none;
 }
 
 .profile {
@@ -62,6 +59,7 @@
   border-radius: 10px;
 
   background-color: var(--main-color);
+  transition: background-color 300ms ease-in-out;
 }
 
 .userIcon {
@@ -81,8 +79,17 @@
   .burgerBtn {
     display: none;
   }
+
   .authBtns {
     display: flex;
+    align-items: center;
     gap: 8px;
+  }
+
+  .userMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
   }
 }

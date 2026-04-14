@@ -96,6 +96,7 @@
   padding: 12px;
 
   background-color: var(--main-color);
+  transition: background-color 300ms ease-in-out;
 }
 
 .squareLarge {
@@ -113,6 +114,8 @@
   fill: var(--main-color);
   width: 30px;
   height: 30px;
+
+  transition: fill 300ms ease-in-out;
 }
 
 .rectangleText {

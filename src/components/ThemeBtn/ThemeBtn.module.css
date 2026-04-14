@@ -1,0 +1,26 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  border: none;
+
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+  transition: transform 300ms ease-in-out;
+}
+
+.btn:hover .icon {
+  fill: var(--main-color)
+}
+
+.icon {
+  fill: var(--black-color);
+  width: 30px;
+  height: 30px;
+
+  transition: fill 300ms ease-in-out;
+}

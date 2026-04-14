@@ -34,6 +34,7 @@ body {
   font-size: 16px;
   line-height: 125%;
   color: var(--black-color);
+  background-color: var(--white-color);
 }
 
 h1 {
@@ -93,6 +94,7 @@ img {
 
 .accent {
   color: var(--main-color);
+  transition: color 300ms ease-in-out;
 }
 
 .btn {
