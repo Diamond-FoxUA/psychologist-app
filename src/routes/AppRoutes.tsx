@@ -9,7 +9,7 @@ const Psychologists = lazy(() => import("../pages/Psychologists"));
 const Favourites = lazy(() => import("../pages/Favorites"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
-import PulseLoader from "../context/PulseLoader/PulseLoader";
+import PulseLoader from "../components/ux-ui/PulseLoader/PulseLoader";
 
 export default function AppRoutes() {
   return (
