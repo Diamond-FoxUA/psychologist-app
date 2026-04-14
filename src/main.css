@@ -85,6 +85,7 @@ img {
 
 .section {
   padding: 78px 0 100px 0;
+  background-color: var(--white-color);
 }
 
 .italic {

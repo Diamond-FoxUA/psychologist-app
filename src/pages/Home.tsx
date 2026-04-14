@@ -5,7 +5,7 @@ import { PATHS } from "../variables";
 
 export default function Home() {
   return (
-    <section className={`section ${css.section}`}>
+    <section className="section">
       <div className={`container ${css.container}`}>
         <div className={css.contentWrapper}>
           <h1 className={css.title}>
