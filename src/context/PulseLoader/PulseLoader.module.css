@@ -1,0 +1,27 @@
+.pulse {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--main-color);
+
+  margin: 40px auto;
+
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+}

@@ -9,9 +9,17 @@ const Psychologists = lazy(() => import("../pages/Psychologists"));
 const Favourites = lazy(() => import("../pages/Favorites"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
+import PulseLoader from "../context/PulseLoader/PulseLoader";
+
 export default function AppRoutes() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div style={{ display: "grid", placeItems: "center", height: "100vh" }}>
+          <PulseLoader />
+        </div>
+      }
+    >
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />}></Route>
