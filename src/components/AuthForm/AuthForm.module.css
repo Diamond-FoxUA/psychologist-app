@@ -80,3 +80,7 @@
 
   transition: stroke 300ms ease-in-out
 }
+
+.submitBtn {
+  margin-top: 22px;
+}

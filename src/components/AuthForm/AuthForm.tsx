@@ -123,7 +123,7 @@ export default function AuthForm({ type, onSuccess }: AuthFormProps) {
         )}
       </div>
 
-      <Button type={"submit"}>{isRegister ? "Sign Up" : "Log In"}</Button>
+      <Button className={css.submitBtn} type={"submit"}>{isRegister ? "Sign Up" : "Log In"}</Button>
     </form>
   );
 }
