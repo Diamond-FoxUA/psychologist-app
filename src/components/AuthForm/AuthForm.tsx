@@ -1,10 +1,18 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { toast } from "sonner";
+import { FirebaseError } from "firebase/app";
 
 import css from "./AuthForm.module.css";
 import Button from "../Button/Button";
-import { useState } from "react";
+
+import {
+  register as registerUser,
+  login as loginUser,
+} from "../../services/auth";
+import { getFirebaseErrorMessage } from "../../utils/firebaseErrors";
 
 interface AuthFormProps {
   type: "register" | "login";
@@ -43,9 +51,23 @@ export default function AuthForm({ type, onSuccess }: AuthFormProps) {
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
-    onSuccess();
+  const onSubmit = async (data: FormValues) => {
+    try {
+      if (isRegister) {
+        await registerUser(data.email, data.password, data.username || "");
+      } else {
+        await loginUser(data.email, data.password);
+      }
+
+      onSuccess();
+    } catch (error: unknown) {
+      if (error instanceof FirebaseError) {
+        toast.error(getFirebaseErrorMessage(error.code));
+        return;
+      } else {
+        toast.error("Something went wrong");
+      }
+    }
   };
 
   return (
@@ -123,7 +145,9 @@ export default function AuthForm({ type, onSuccess }: AuthFormProps) {
         )}
       </div>
 
-      <Button className={css.submitBtn} type={"submit"}>{isRegister ? "Sign Up" : "Log In"}</Button>
+      <Button className={css.submitBtn} type={"submit"}>
+        {isRegister ? "Sign Up" : "Log In"}
+      </Button>
     </form>
   );
 }
