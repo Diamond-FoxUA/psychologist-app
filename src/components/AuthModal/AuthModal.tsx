@@ -1,6 +1,5 @@
 import css from "./AuthModal.module.css";
 
-import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
 import AuthForm from "../AuthForm/AuthForm";
 
@@ -22,8 +21,7 @@ export default function AuthModal({ type, onClose }: AuthModalProps) {
               information.
             </p>
           </div>
-          <AuthForm type={type} />
-          <Button type={"submit"}>Sign Up</Button>
+          <AuthForm type={type} onSuccess={onClose} />
         </>
       )}
 
@@ -34,8 +32,7 @@ export default function AuthModal({ type, onClose }: AuthModalProps) {
             Welcome back! Please enter your credentials to access your account
             and continue your search for a psychologist.
           </p>
-          <AuthForm type={type} />
-          <Button type={"submit"}>Log In</Button>
+          <AuthForm type={type} onSuccess={onClose} />
         </>
       )}
     </Modal>

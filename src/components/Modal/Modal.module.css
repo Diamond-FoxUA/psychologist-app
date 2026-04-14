@@ -19,7 +19,8 @@
   flex-direction: column;
 
   max-width: 566px;
-  padding: 64px;
+  margin: 0 16px;
+  padding: 64px 16px;
   background-color: var(--white-color);
   border-radius: 30px;
 }
@@ -47,7 +48,7 @@
 .closeButton:hover {
   transform: scale(1.1);
 }
- 
+
 .closeButton .icon {
   stroke: var(--black-color);
   width: 32px;
@@ -59,4 +60,10 @@
   flex-direction: column;
 
   gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    padding: 64px;
+  }
 }
