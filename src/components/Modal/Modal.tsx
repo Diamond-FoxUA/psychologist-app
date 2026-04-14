@@ -20,7 +20,7 @@ export default function Modal({ onClose, children }: ModalProps) {
         onClose();
       }
     };
-    
+
     document.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
 
@@ -48,7 +48,7 @@ export default function Modal({ onClose, children }: ModalProps) {
           </svg>
         </button>
 
-        {children}
+        <div className={css.modalContent}>{children}</div>
       </div>
     </div>,
     document.body,

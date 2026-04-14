@@ -26,6 +26,7 @@
 
   background-color: transparent;
   border: none;
+  border-radius: 100%;
 
   cursor: pointer;
   transition: transform 300ms ease-in-out;
@@ -57,47 +58,47 @@
 }
 
 .navListItem {
-    position: relative;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 125%;
-    letter-spacing: -0.01em;
-    color: var(--black-color);
+  position: relative;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+  color: var(--black-color);
 
-    transition: opacity 300ms ease-in-out;
-  }
+  transition: opacity 300ms ease-in-out;
+}
 
-  .navListItem:active {
-    opacity: 50%;
-  }
+.navListItem:active {
+  opacity: 50%;
+}
 
-  .navListItem::after {
-    position: absolute;
-    content: "";
+.navListItem::after {
+  position: absolute;
+  content: "";
 
-    width: 8px;
-    height: 8px;
-    border-radius: 100%;
-    bottom: -12px;
-    left: 50%;
-    background-color: transparent;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  bottom: -12px;
+  left: 50%;
+  background-color: transparent;
 
-    transition: background-color 300ms ease-in-out;
-    transform: translateX(-50%);
-  }
+  transition: background-color 300ms ease-in-out;
+  transform: translateX(-50%);
+}
 
-  .navListItem:hover::after {
-    background-color: var(--main-color);
-  }
+.navListItem:hover::after {
+  background-color: var(--main-color);
+}
 
-  .navLink {
-    padding: 36px 0;
-  }
+.navLink {
+  padding: 36px 0;
+}
 
-  .authBtns {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 36px 16px;
-    margin-top: 8vh;
-  }
+.authBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 36px 16px;
+  margin-top: 8vh;
+}

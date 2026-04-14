@@ -4,6 +4,7 @@ interface ButtonProps {
   className?: string;
   disabled?: boolean;
   onClick?: () => void;
+  type?: "submit" | "button";
 }
 
 export default function Button({
@@ -12,10 +13,11 @@ export default function Button({
   disabled = false,
   onClick,
   className = "",
+  type = 'button',
 }: ButtonProps) {
   return (
     <button
-      type="button"
+      type={type}
       onClick={onClick}
       disabled={disabled}
       className={`btn btn-${variant} ${className}`}

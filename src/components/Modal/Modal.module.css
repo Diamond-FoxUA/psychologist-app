@@ -1,0 +1,62 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  z-index: 900;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #191a1599;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  max-width: 566px;
+  padding: 64px;
+  background-color: var(--white-color);
+  border-radius: 30px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 100%;
+
+  transition: transform 300ms ease-in-out;
+}
+
+.closeButton:hover {
+  transform: scale(1.1);
+}
+ 
+.closeButton .icon {
+  stroke: var(--black-color);
+  width: 32px;
+  height: 32px;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+
+  gap: 40px;
+}

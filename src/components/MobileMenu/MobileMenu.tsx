@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 import css from "./MobileMenu.module.css";
 import { PATHS } from "../../variables";
@@ -7,15 +6,15 @@ import Logo from "../Logo/Logo";
 import { createPortal } from "react-dom";
 import Button from "../Button/Button";
 
+import type { ModalType } from "../../types/modal";
+
 interface MobileMenuProps {
   onClose: () => void;
+  setModal: (type: ModalType) => void;
 }
 
-export default function MobileMenu({ onClose }: MobileMenuProps) {
+export default function MobileMenu({ onClose, setModal }: MobileMenuProps) {
   const isLoggedIn = false;
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-    const toggleModal = () => setIsModalOpen((prev) => !prev);
 
   return createPortal(
     <div className={`container ${css.container}`}>
@@ -63,18 +62,29 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
           </ul>
         </nav>
 
-        {!isLoggedIn && <div className={css.authBtns}>
-          <Button
-            onClick={toggleModal}
-            className={css.authBtn}
-            variant="secondary"
-          >
-            Log in
-          </Button>
-          <Button onClick={toggleModal} className={css.authBtn}>
-            Register
-          </Button>
-        </div>}
+        {!isLoggedIn && (
+          <div className={css.authBtns}>
+            <Button
+              onClick={() => {
+                onClose();
+                setModal("login");
+              }}
+              className={css.authBtn}
+              variant="secondary"
+            >
+              Log in
+            </Button>
+            <Button
+              onClick={() => {
+                onClose();
+                setModal("register");
+              }}
+              className={css.authBtn}
+            >
+              Register
+            </Button>
+          </div>
+        )}
       </div>
     </div>,
     document.body,
