@@ -22,7 +22,16 @@ export default function MobileMenu({ onClose, setModal }: MobileMenuProps) {
   const { user } = useAuth();
 
   const handleLogout = async () => {
-    await logoutUser();
+    try {
+      await logoutUser();
+      toast.success("Logout successfully!");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("Something went wrong");
+      }
+    }
 
     onClose();
     toast.success("Logout successfully!");
@@ -100,7 +109,11 @@ export default function MobileMenu({ onClose, setModal }: MobileMenuProps) {
 
         {user && (
           <div className={`container ${css.userMenu}`}>
-            <Button className={css.logoutBtn} variant="secondary" onClick={handleLogout}>
+            <Button
+              className={css.logoutBtn}
+              variant="secondary"
+              onClick={handleLogout}
+            >
               Log out
             </Button>
             <div className={css.profile}>

@@ -18,8 +18,16 @@ export default function Header({ setModal }: HeaderProps) {
   const { user } = useAuth();
 
   const handleLogout = async () => {
-    await logout();
-    toast.success("Logout successfully!");
+    try {
+      await logout();
+      toast.success("Logout successfully!");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("Something went wrong");
+      }
+    }
   };
 
   return (
