@@ -1,14 +1,14 @@
 import css from "./Header.module.css";
 
-import Logo from "../../Logo/Logo";
-import NavBar from "../../Navbar/Navbar";
-import Button from "../../Button/Button";
-import ThemeBtn from "../../ThemeBtn/ThemeBtn";
+import Logo from "../Logo/Logo";
+import NavBar from "../Navbar/Navbar";
+import Button from "../Button/Button";
+import ThemeBtn from "../ThemeBtn/ThemeBtn";
 
-import { useAuth } from "../../../hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 
-import type { ModalType } from "../../../types/modal";
-import { logout } from "../../../services/auth";
+import type { ModalType } from "../../types/modal";
+import { logout as userLogout } from "../../services/auth";
 import { toast } from "sonner";
 interface HeaderProps {
   setModal: (type: ModalType) => void;
@@ -19,7 +19,7 @@ export default function Header({ setModal }: HeaderProps) {
 
   const handleLogout = async () => {
     try {
-      await logout();
+      await userLogout();
       toast.success("Logout successfully!");
     } catch (error: unknown) {
       if (error instanceof Error) {
