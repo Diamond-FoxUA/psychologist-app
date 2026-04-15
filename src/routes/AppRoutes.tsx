@@ -4,10 +4,10 @@ import { Suspense, lazy } from "react";
 import { PATHS } from "../variables";
 
 import App from "../App";
-const Home = lazy(() => import("../pages/Home"));
-const Psychologists = lazy(() => import("../pages/Psychologists"));
-const Favourites = lazy(() => import("../pages/Favorites"));
-const NotFound = lazy(() => import("../pages/NotFound"));
+const Home = lazy(() => import("../pages/Home/Home"));
+const Psychologists = lazy(() => import("../pages/Psychologists/Psychologists"));
+const Favourites = lazy(() => import("../pages/Favourites/Favorites"));
+const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 
 import PulseLoader from "../components/ux-ui/PulseLoader/PulseLoader";
 

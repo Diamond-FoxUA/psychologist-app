@@ -1,7 +1,7 @@
 import css from "./Home.module.css";
 
-import LinkButton from "../components/LinkButton/LinkButton";
-import { PATHS } from "../variables";
+import LinkButton from "../../components/LinkButton/LinkButton";
+import { PATHS } from "../../variables";
 
 export default function Home() {
   return (
