@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
-import Header from "./components/layout/Header/Header";
+import Header from "./components/Header/Header";
 import MobileMenu from "./components/MobileMenu/MobileMenu";
 import AuthModal from "./components/AuthModal/AuthModal";
 
