@@ -77,8 +77,8 @@ img {
 }
 
 .container {
-  width: 100%;
-  max-width: 1440px;
+  width: 1440px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 16px;
 }
