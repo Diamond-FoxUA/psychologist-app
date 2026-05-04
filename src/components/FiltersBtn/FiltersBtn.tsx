@@ -30,7 +30,7 @@ export default function FiltersBtn({
         dropdownRef.current &&
         !dropdownRef.current.contains(e.target as Node)
       ) {
-        setIsOpen((prev) => !prev);
+        setIsOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClick);
