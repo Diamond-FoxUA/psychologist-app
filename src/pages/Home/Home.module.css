@@ -5,6 +5,11 @@
   gap: 50px;
 }
 
+.section {
+  background: linear-gradient(148deg, #f3f3f3, #54be952c);
+  height: 100vh;
+}
+
 .contentWrapper {
   display: flex;
   flex-direction: column;
