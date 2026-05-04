@@ -16,11 +16,11 @@ import type { Psychologist } from "../types/psychologists";
 
 export type FilterOption =
   | "all"
-  | "name-asc"
   | "name-desc"
   | "price-lt-10"
   | "price-gt-10"
   | "popular"
+  | "name-asc"
   | "not-popular";
 
 const PAGE_SIZE = 3;

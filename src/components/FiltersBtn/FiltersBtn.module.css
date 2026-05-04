@@ -20,6 +20,8 @@
   margin-bottom: 32px;
 
   background-color: var(--main-color);
+
+  transition: background-color 300ms ease-in-out;
   cursor: pointer;
 }
 
