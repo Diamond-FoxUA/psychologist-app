@@ -17,12 +17,14 @@
 }
 [data-theme="blue"] {
   --main-color: #3470ff;
+  --main-darker-color: #255ee8;
   --secondary-color: #3470ff33;
   --warning-color: ##ffc333;
   --error-color: ##ff5733;
 }
 [data-theme="orange"] {
   --main-color: #fc832c;
+  --main-darker-color: #f37113;
   --secondary-color: #fc832c33;
   --warning-color: #fcc02b;
   --error-color: #fc452b;
