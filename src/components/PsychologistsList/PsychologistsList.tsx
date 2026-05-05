@@ -60,7 +60,10 @@ export default function PsychologistsList({
               </button>
 
               <div className={css.leftColumn}>
-                <div className={css.avatar}>
+                <div
+                  className={css.avatar}
+                  onClick={() => setReadMore(psychologist.id)}
+                >
                   <span className={css.onlineIcon}></span>
                   <img
                     className={css.avatarImage}

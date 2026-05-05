@@ -5,9 +5,10 @@
   justify-content: center;
   align-items: center;
 
-  width: 120px;
-  height: 120px;
+  width: 250px;
+  height: 250px;
   padding: 12px;
+  margin: 0 auto 30px auto;
 
   border: 2px solid rgba(84, 190, 150, 0.2);
   border-radius: 30px;
@@ -17,18 +18,18 @@
 
 .avatarImage {
   border-radius: 15px;
-  width: 96px;
-  height: 96px;
+  width: 220px;
+  height: 220px;
 }
 
 .onlineIcon {
   position: absolute;
-  top: 6px;
-  right: 12px;
+  top: 32px;
+  right: 30px;
   z-index: 30;
 
-  width: 14px;
-  height: 14px;
+  width: 30px;
+  height: 30px;
 
   background-color: #38cd3e;
   border: 2px solid var(--white-color);
@@ -46,14 +47,11 @@
 .cardItem {
   position: relative;
   display: flex;
+  flex-direction: column;
 
   background-color: var(--white-color);
   border-radius: 24px;
   padding: 24px;
-}
-
-.leftColumn {
-  margin-right: 24px;
 }
 
 .cardHeading {
@@ -77,8 +75,6 @@
 .rightHeading {
   display: flex;
   align-items: start;
-
-  margin-right: 54px;
 }
 
 .rating {
@@ -138,7 +134,7 @@
 
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 48px;
   padding: 8px 16px;
   background-color: #f3f3f3;
   border-radius: 24px;
@@ -237,4 +233,39 @@
 
 .loader {
   margin-top: 20vh;
+}
+
+@media screen and (min-width: 768px) {
+  .cardItem {
+    flex-direction: row;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .avatarImage {
+    border-radius: 15px;
+    width: 220px;
+    height: 220px;
+
+    width: 96px;
+    height: 96px;
+  }
+
+  .onlineIcon {
+    top: 6px;
+    right: 12px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .leftColumn {
+    margin-right: 24px;
+  }
+
+  .rightHeading {
+    margin-right: 54px;
+  }
 }

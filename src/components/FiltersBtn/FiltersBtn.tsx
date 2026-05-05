@@ -1,5 +1,5 @@
 import css from "./FiltersBtn.module.css";
-import type { FilterOption } from "../../services/psychologists";
+import type { FilterOption } from "../../types/psychologists";
 import { useEffect, useRef, useState } from "react";
 
 interface FilterBtnProps {
