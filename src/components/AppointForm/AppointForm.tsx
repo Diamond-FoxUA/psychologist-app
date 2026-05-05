@@ -190,9 +190,6 @@ export default function AppointForm({ onSuccess }: AppointFormProps) {
           className={`${css.textarea} ${errors.comment ? css.errorInput : ""}`}
           placeholder="Comment"
         />
-        {errors.comment && (
-          <p className={css.errorText}>{errors.comment.message}</p>
-        )}
       </div>
 
       <Button type="submit" className={css.sendBtn}>

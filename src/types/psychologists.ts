@@ -21,6 +21,15 @@ export interface Psychologist {
   about: string;
 }
 
+export type FilterOption =
+  | "all"
+  | "name-desc"
+  | "price-lt-10"
+  | "price-gt-10"
+  | "popular"
+  | "name-asc"
+  | "not-popular";
+
 export interface GetPsychologistsPageResponse {
   data: Psychologist[];
   lastDoc: QueryDocumentSnapshot<DocumentData> | null;

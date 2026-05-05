@@ -99,7 +99,8 @@
   cursor: pointer;
 }
 
-.favBtn:hover .favIcon {
+.favBtn:hover .favIcon,
+.isFavorite.favIcon {
   fill: var(--main-color);
   stroke: var(--main-color);
 }
@@ -114,8 +115,6 @@
 
   fill: transparent;
   stroke: var(--black-color);
-
-  transition: opacity 300ms ease-in-out;
 }
 
 .rating {
