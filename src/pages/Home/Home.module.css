@@ -32,6 +32,11 @@
 .imageWrapper {
   position: relative;
   background-color: silver;
+  border-radius: 10px;
+}
+
+.imageWrapper img {
+  border-radius: 10px;
 }
 
 .squareSmall {
