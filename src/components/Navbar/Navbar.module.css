@@ -49,4 +49,7 @@
   .navLink {
     padding: 36px 0;
   }
+  .navListItem.active::after {
+    background-color: var(--main-color);
+  }
 }
