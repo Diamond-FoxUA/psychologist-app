@@ -100,8 +100,8 @@
 }
 
 .favBtn:hover .favIcon {
-  fill: #38cd3e;
-  stroke: #38cd3e;
+  fill: var(--main-color);
+  stroke: var(--main-color);
 }
 
 .favBtn:active .favIcon {
