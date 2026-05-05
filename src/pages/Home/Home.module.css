@@ -6,7 +6,7 @@
 }
 
 .section {
-  background: linear-gradient(148deg, #f3f3f3, #54be952c);
+  background: linear-gradient(148deg, #f3f3f3, var(--secondary-color));
   height: 100vh;
 }
 
