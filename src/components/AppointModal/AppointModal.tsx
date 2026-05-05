@@ -36,7 +36,7 @@ export default function AppointModal({
             <h3>{psychologist.name}</h3>
           </div>
         </div>
-        <AppointForm />
+        <AppointForm onSuccess={onClose}/>
       </div>
     </Modal>
   );
