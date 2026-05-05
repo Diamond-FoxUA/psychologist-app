@@ -25,6 +25,7 @@ import css from "./Psychologists.module.css";
 import FiltersBtn from "../../components/FiltersBtn/FiltersBtn";
 import PsychologistsList from "../../components/PsychologistsList/PsychologistsList";
 import AppointModal from "../../components/AppointModal/AppointModal";
+import ScrollBtn from "../../components/ux-ui/ScrollBtn/ScrollBtn";
 
 export default function Psychologists() {
   const queryClient = useQueryClient();
@@ -85,6 +86,8 @@ export default function Psychologists() {
           isFetchingMore={isFetchingNextPage}
           onSelect={(psychologist) => setSelectedPsychologist(psychologist)}
         />
+        <ScrollBtn />
+
         {selectedPsychologist && (
           <AppointModal
             psychologist={selectedPsychologist}
