@@ -33,6 +33,7 @@ export default function Psychologists() {
     useState<Psychologist | null>(null);
 
   const user = auth.currentUser;
+  const LIMIT = 3;
 
   const { data: favoriteIds = [] } = useQuery({
     queryKey: ["favoriteIds", user?.uid],
@@ -58,7 +59,12 @@ export default function Psychologists() {
       queryKey: ["psychologists", filter, "psychologists"],
       queryFn: fetchPsychologists,
       initialPageParam: null,
-      getNextPageParam: (lastPage) => lastPage.lastDoc,
+      getNextPageParam: (lastPage) => {
+        if (lastPage.data.length < LIMIT) {
+          return undefined;
+        }
+        return lastPage.lastDoc ?? undefined;
+      },
     });
 
   const allPsychologists = data?.pages.flatMap((page) => page.data) ?? [];

@@ -32,6 +32,7 @@ export default function Favourites() {
 
   const user = auth.currentUser;
   const favouritesPath = `users/${user?.uid}/favorites`;
+  const LIMIT = 3;
 
   const { data: favoriteIds = [] } = useQuery({
     queryKey: ["favoriteIds", user?.uid],
@@ -60,7 +61,12 @@ export default function Favourites() {
       queryKey: ["psychologists", filter, favouritesPath],
       queryFn: fetchPsychologists,
       initialPageParam: null,
-      getNextPageParam: (lastPage) => lastPage.lastDoc,
+      getNextPageParam: (lastPage) => {
+        if (lastPage.data.length < LIMIT) {
+          return undefined;
+        }
+        return lastPage.lastDoc ?? undefined;
+      },
       enabled: !!user,
     });
 

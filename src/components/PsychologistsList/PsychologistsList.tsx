@@ -183,7 +183,7 @@ export default function PsychologistsList({
         </Button>
       )}
 
-      {!isLoading && !hasNextPage && items.length > 0 && (
+      {!hasNextPage && items.length > 0 && !isFetchingMore && (
         <p className={css.nextPageText}>You have reached the end.</p>
       )}
     </div>
