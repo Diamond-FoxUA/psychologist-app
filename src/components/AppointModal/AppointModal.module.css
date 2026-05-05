@@ -1,0 +1,47 @@
+.heading {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: var(--black-color);
+
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  color: var(--gray-color);
+  margin-bottom: 40px;
+}
+
+.psychologistContainer {
+  display: flex;
+}
+
+.psychologistInfo p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  color: #8a8a89;
+
+  margin-bottom: 4px;
+}
+
+.psychologistInfo h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--black-color);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+
+  margin-right: 14px;
+}
+
+.sendBtn {
+  width: 100%;
+  margin-top: 40px;
+}
