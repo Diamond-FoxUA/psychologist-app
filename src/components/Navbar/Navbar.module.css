@@ -38,6 +38,7 @@
     left: 50%;
     background-color: transparent;
 
+    cursor: pointer;
     transition: background-color 300ms ease-in-out;
     transform: translateX(-50%);
   }
