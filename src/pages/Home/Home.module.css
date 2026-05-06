@@ -5,15 +5,6 @@
   gap: 50px;
 }
 
-html body {
-  background: transparent;
-}
-
-.section {
-  background: linear-gradient(148deg, #f3f3f3, var(--secondary-color));
-  height: 100vh;
-}
-
 .contentWrapper {
   display: flex;
   flex-direction: column;
