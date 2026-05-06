@@ -191,6 +191,9 @@ export default function AppointForm({ onSuccess }: AppointFormProps) {
           placeholder="Comment"
         />
       </div>
+      {errors.comment && (
+        <p className={css.errorText}>{errors.comment.message}</p>
+      )}
 
       <Button type="submit" className={css.sendBtn}>
         Send
