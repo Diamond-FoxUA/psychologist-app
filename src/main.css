@@ -56,6 +56,11 @@ img {
   outline: none;
 }
 
+body.menu-open {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

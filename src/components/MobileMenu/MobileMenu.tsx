@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 
@@ -36,6 +37,12 @@ export default function MobileMenu({ onClose, setModal }: MobileMenuProps) {
     onClose();
     toast.success("Logout successfully!");
   };
+
+  useEffect(() => {
+  document.body.classList.add("menu-open");
+  return () => document.body.classList.remove("menu-open");
+}, []);
+
 
   return createPortal(
     <div className={`container`}>

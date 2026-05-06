@@ -1,5 +1,5 @@
 .container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 500;
@@ -9,8 +9,6 @@
   background-color: #f3f3f3;
 
   overflow: hidden;
-  overscroll-behavior-y: none;
-
   transition: transform 300ms ease-in-out;
 }
 
