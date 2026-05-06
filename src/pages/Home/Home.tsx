@@ -10,7 +10,7 @@ export default function Home() {
       <SEO
         title="Psychologists.service"
         description="Discover professional guidance to unlock your potential and overcome life's challenges."
-        image="https://psychologist-app-lyart.vercel.app"
+        image="https://psychologist-app-lyart.vercel.app/og-image.jpg"
       />
 
       <section className={`section`}>

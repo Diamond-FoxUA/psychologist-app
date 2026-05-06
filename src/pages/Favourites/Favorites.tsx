@@ -8,16 +8,18 @@ import {
 } from "@tanstack/react-query";
 import { QueryDocumentSnapshot, type DocumentData } from "firebase/firestore";
 import { auth } from "../../firebase/firebase";
-import {
-  fetchPsychologists,
-  type QueryKeyType,
-} from "../../services/psychologists";
-import { fetchFavoriteIds, toggleFavorite } from "../../services/favourites";
+import { toast } from "sonner";
+
 import type {
   FilterOption,
   Psychologist,
   GetPsychologistsPageResponse,
 } from "../../types/psychologists";
+import {
+  fetchPsychologists,
+  type QueryKeyType,
+} from "../../services/psychologists";
+import { fetchFavoriteIds, toggleFavorite } from "../../services/favourites";
 
 import css from "../Psychologists/Psychologists.module.css";
 import FiltersBtn from "../../components/FiltersBtn/FiltersBtn";
@@ -25,7 +27,6 @@ import PsychologistsList from "../../components/PsychologistsList/PsychologistsL
 import AppointModal from "../../components/AppointModal/AppointModal";
 import ScrollBtn from "../../components/ux-ui/ScrollBtn/ScrollBtn";
 import SEO from "../../components/SEO/SEO";
-import { toast } from "sonner";
 
 export default function Favourites() {
   const queryClient = useQueryClient();
@@ -46,20 +47,16 @@ export default function Favourites() {
   const { mutate: handleToggleFav } = useMutation({
     mutationFn: (psych: Psychologist) =>
       toggleFavorite(user!.uid, psych, favoriteIds.includes(psych.id)),
-
     onSuccess: (_, psych) => {
       toast.success(`${psych.name} was removed from favorites`);
-
       queryClient.invalidateQueries({ queryKey: ["favoriteIds", user?.uid] });
-
       queryClient.invalidateQueries({
         queryKey: ["psychologists"],
         refetchType: "all",
       });
     },
-
     onError: () => {
-      toast.error("Failed to update favorites. Please try again.");
+      toast.error("Failed to update favorites.");
     },
   });
 
@@ -75,7 +72,7 @@ export default function Favourites() {
       queryFn: fetchPsychologists,
       initialPageParam: null,
       getNextPageParam: (lastPage) => {
-        if (lastPage.data.length < LIMIT) {
+        if (!lastPage.data || lastPage.data.length < LIMIT) {
           return undefined;
         }
         return lastPage.lastDoc ?? undefined;
@@ -87,8 +84,8 @@ export default function Favourites() {
     <>
       <SEO
         title="Favorites | Psychologists.service"
-        description="Discover professional guidance to unlock your potential and overcome life's challenges."
-        image="https://psychologist-app-lyart.vercel.app"
+        description="Access your saved professional guides."
+        image="https://psychologist-app-lyart.vercel.app/og-image.jpg"
       />
 
       <section className={`section ${css.section}`}>
