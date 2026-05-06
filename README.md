@@ -46,6 +46,8 @@ Live – https://psychologist-app-lyart.vercel.app/psychologists
 
 The project uses a reusable React SEO component instead of static HTML meta tags.
 
+---
+
 ## Routing
 
 * / → Home
@@ -53,6 +55,8 @@ The project uses a reusable React SEO component instead of static HTML meta tags
 * /favorites → Favorites (private route)
 
 [React Router Documentation](https://reactrouter.com/en/main)￼
+
+---
 
 ## Getting Started
 
@@ -68,6 +72,8 @@ npm run dev
 
 ```
 
+---
+
 ## Environment Setup
 
 VITE_API_KEY=your_key
@@ -76,6 +82,8 @@ VITE_PROJECT_ID=your_project_id
 VITE_STORAGE_BUCKET=your_bucket
 VITE_MESSAGING_SENDER_ID=your_sender_id
 VITE_APP_ID=your_app_id
+
+---
 
 ## License
 
