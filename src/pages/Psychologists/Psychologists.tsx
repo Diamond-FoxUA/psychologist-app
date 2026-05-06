@@ -26,6 +26,7 @@ import FiltersBtn from "../../components/FiltersBtn/FiltersBtn";
 import PsychologistsList from "../../components/PsychologistsList/PsychologistsList";
 import AppointModal from "../../components/AppointModal/AppointModal";
 import ScrollBtn from "../../components/ux-ui/ScrollBtn/ScrollBtn";
+import SEO from "../../components/SEO/SEO";
 
 export default function Psychologists() {
   const queryClient = useQueryClient();
@@ -71,30 +72,37 @@ export default function Psychologists() {
   const allPsychologists = data?.pages.flatMap((page) => page.data) ?? [];
 
   return (
-    <section className={`section ${css.section}`}>
-      <div className="container">
-        <FiltersBtn currentFilter={filter} onFilterChange={setFilter} />
-        <PsychologistsList
-          items={allPsychologists}
-          favoriteIds={favoriteIds}
-          onToggleFav={(p) =>
-            user ? handleToggleFav(p) : toast.error("Please login.")
-          }
-          onLoadMore={fetchNextPage}
-          hasNextPage={hasNextPage}
-          isLoading={isLoading}
-          isFetchingMore={isFetchingNextPage}
-          onSelect={(psychologist) => setSelectedPsychologist(psychologist)}
-        />
-        <ScrollBtn />
+    <>
+      <SEO
+        title="Psychologists | Psychologists.service"
+        description="Discover professional guidance to unlock your potential and overcome life's challenges."
+        image="https://psychologist-app-lyart.vercel.app"
+      />
 
-        {selectedPsychologist && (
-          <AppointModal
-            psychologist={selectedPsychologist}
-            onClose={() => setSelectedPsychologist(null)}
+      <section className={`section ${css.section}`}>
+        <div className="container">
+          <FiltersBtn currentFilter={filter} onFilterChange={setFilter} />
+          <PsychologistsList
+            items={allPsychologists}
+            favoriteIds={favoriteIds}
+            onToggleFav={(p) =>
+              user ? handleToggleFav(p) : toast.error("Please login.")
+            }
+            onLoadMore={fetchNextPage}
+            hasNextPage={hasNextPage}
+            isLoading={isLoading}
+            isFetchingMore={isFetchingNextPage}
+            onSelect={(psychologist) => setSelectedPsychologist(psychologist)}
           />
-        )}
-      </div>
-    </section>
+          <ScrollBtn />
+          {selectedPsychologist && (
+            <AppointModal
+              psychologist={selectedPsychologist}
+              onClose={() => setSelectedPsychologist(null)}
+            />
+          )}
+        </div>
+      </section>
+    </>
   );
 }

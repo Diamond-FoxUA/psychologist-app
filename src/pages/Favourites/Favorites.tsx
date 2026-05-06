@@ -24,6 +24,7 @@ import FiltersBtn from "../../components/FiltersBtn/FiltersBtn";
 import PsychologistsList from "../../components/PsychologistsList/PsychologistsList";
 import AppointModal from "../../components/AppointModal/AppointModal";
 import ScrollBtn from "../../components/ux-ui/ScrollBtn/ScrollBtn";
+import SEO from "../../components/SEO/SEO";
 
 export default function Favourites() {
   const queryClient = useQueryClient();
@@ -72,28 +73,35 @@ export default function Favourites() {
     });
 
   return (
-    <section className={`section ${css.section}`}>
-      <div className="container">
-        <FiltersBtn currentFilter={filter} onFilterChange={setFilter} />
-        <PsychologistsList
-          items={data?.pages.flatMap((page) => page.data) ?? []}
-          favoriteIds={favoriteIds}
-          onToggleFav={handleToggleFav}
-          onLoadMore={fetchNextPage}
-          hasNextPage={hasNextPage}
-          isLoading={isLoading}
-          isFetchingMore={isFetchingNextPage}
-          onSelect={setSelectedPsychologist}
-        />
-        <ScrollBtn />
+    <>
+      <SEO
+        title="Favorites | Psychologists.service"
+        description="Discover professional guidance to unlock your potential and overcome life's challenges."
+        image="https://psychologist-app-lyart.vercel.app"
+      />
 
-        {selectedPsychologist && (
-          <AppointModal
-            psychologist={selectedPsychologist}
-            onClose={() => setSelectedPsychologist(null)}
+      <section className={`section ${css.section}`}>
+        <div className="container">
+          <FiltersBtn currentFilter={filter} onFilterChange={setFilter} />
+          <PsychologistsList
+            items={data?.pages.flatMap((page) => page.data) ?? []}
+            favoriteIds={favoriteIds}
+            onToggleFav={handleToggleFav}
+            onLoadMore={fetchNextPage}
+            hasNextPage={hasNextPage}
+            isLoading={isLoading}
+            isFetchingMore={isFetchingNextPage}
+            onSelect={setSelectedPsychologist}
           />
-        )}
-      </div>
-    </section>
+          <ScrollBtn />
+          {selectedPsychologist && (
+            <AppointModal
+              psychologist={selectedPsychologist}
+              onClose={() => setSelectedPsychologist(null)}
+            />
+          )}
+        </div>
+      </section>
+    </>
   );
 }
