@@ -2,7 +2,11 @@
 
 A responsive web app to explore and book appointments with psychologists. Users can register, log in, add favorites, and schedule consultations.
 
-Live – https://psychologist-app-lyart.vercel.app/psychologists
+- 🚀 Live Demo – https://psychologist-app-lyart.vercel.app/psychologists
+
+- 🎨 Design (Figma mockup): [View layout](https://www.figma.com/file/I5vjNb0NsJOpQRnRpMloSY/Psychologists.Services?type=design&node-id=0-1&mode=design&t=4zfT2zFANRbp1fCK-0)
+
+- 📄 Technical Specification: [View requirements](https://docs.google.com/document/d/1PrTxBn6HQbb0Oz17g5_zvyLGIOZg0TIP3HPaEEp6ZLs/edit?tab=t.0)
 
 ---
 
