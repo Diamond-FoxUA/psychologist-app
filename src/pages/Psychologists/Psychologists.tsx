@@ -46,8 +46,27 @@ export default function Psychologists() {
   const { mutate: handleToggleFav } = useMutation({
     mutationFn: (psych: Psychologist) =>
       toggleFavorite(user!.uid, psych, favoriteIds.includes(psych.id)),
-    onSuccess: () =>
-      queryClient.invalidateQueries({ queryKey: ["favoriteIds", user?.uid] }),
+
+    onSuccess: (_, psych) => {
+      const isRemoving = favoriteIds.includes(psych.id);
+
+      toast.success(
+        isRemoving
+          ? `${psych.name} was removed from favorites`
+          : `${psych.name} was added to favorites!`,
+      );
+
+      queryClient.invalidateQueries({ queryKey: ["favoriteIds", user?.uid] });
+
+      queryClient.invalidateQueries({
+        queryKey: ["psychologists"],
+        refetchType: "all",
+      });
+    },
+
+    onError: () => {
+      toast.error("Failed to update favorites. Please try again.");
+    },
   });
 
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } =

@@ -25,6 +25,7 @@ import PsychologistsList from "../../components/PsychologistsList/PsychologistsL
 import AppointModal from "../../components/AppointModal/AppointModal";
 import ScrollBtn from "../../components/ux-ui/ScrollBtn/ScrollBtn";
 import SEO from "../../components/SEO/SEO";
+import { toast } from "sonner";
 
 export default function Favourites() {
   const queryClient = useQueryClient();
@@ -43,12 +44,22 @@ export default function Favourites() {
   });
 
   const { mutate: handleToggleFav } = useMutation({
-    mutationFn: (psych: Psychologist) => toggleFavorite(user!.uid, psych, true),
-    onSuccess: () => {
+    mutationFn: (psych: Psychologist) =>
+      toggleFavorite(user!.uid, psych, favoriteIds.includes(psych.id)),
+
+    onSuccess: (_, psych) => {
+      toast.success(`${psych.name} was removed from favorites`);
+
       queryClient.invalidateQueries({ queryKey: ["favoriteIds", user?.uid] });
+
       queryClient.invalidateQueries({
-        queryKey: ["psychologists", filter, favouritesPath],
+        queryKey: ["psychologists"],
+        refetchType: "all",
       });
+    },
+
+    onError: () => {
+      toast.error("Failed to update favorites. Please try again.");
     },
   });
 
