@@ -15,7 +15,7 @@ Live – https://psychologist-app-lyart.vercel.app/psychologists
 - **SEO:** Custom React SEO component (Open Graph + Twitter meta management)
 - **Styling:** CSS, responsive (320px–1440px)
 - **Bundler:** Vite
-- **Deployment:** GitHub Pages / Vercel
+- **Deployment:** Vercel
 
 ---
 
