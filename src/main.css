@@ -57,7 +57,7 @@ img {
 }
 
 body.menu-open {
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -77,7 +77,7 @@ body.menu-open {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40vh;
+  margin-top: 40dvh;
 }
 
 .container {
