@@ -52,10 +52,10 @@ export async function fetchPsychologists({
       );
       break;
     case "popular":
-      constraints.push(orderBy("rating", "desc"), orderBy("__name__"));
+      constraints.push(orderBy("rating", "desc"), orderBy("__name__", "desc"));
       break;
     case "not-popular":
-      constraints.push(orderBy("rating", "asc"), orderBy("__name__"));
+      constraints.push(orderBy("rating", "asc"), orderBy("__name__", "asc"));
       break;
     default:
       constraints.push(orderBy("name", "asc"));
