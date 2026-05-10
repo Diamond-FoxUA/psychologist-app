@@ -2,17 +2,10 @@ import css from "./Home.module.css";
 
 import LinkButton from "../../components/LinkButton/LinkButton";
 import { PATHS } from "../../variables";
-import SEO from "../../components/SEO/SEO";
 
 export default function Home() {
   return (
     <>
-      <SEO
-        title="Psychologists.service"
-        description="Discover professional guidance to unlock your potential and overcome life's challenges."
-        image="https://psychologist-app-lyart.vercel.app/og-image.jpg"
-      />
-
       <section className={`section`}>
         <div className={`container ${css.container}`}>
           <div className={css.contentWrapper}>

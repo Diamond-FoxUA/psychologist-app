@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <>
       <SEO
-        title="Page not found | Psychologists.service"
+        title="Page not found | Psychologists.services"
         description="Opps.. page not found."
         image="https://psychologist-app-lyart.vercel.app/og-image.jpg"
       />

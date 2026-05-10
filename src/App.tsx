@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import MobileMenu from "./components/MobileMenu/MobileMenu";
 import AuthModal from "./components/AuthModal/AuthModal";
 
+import SEO from "./components/SEO/SEO";
+
 import type { ModalType } from "./types/modal";
 
 function App() {
@@ -15,6 +17,12 @@ function App() {
 
   return (
     <>
+      <SEO
+        title="Psychologists.Services"
+        description="Discover professional guidance to unlock your potential and overcome life's challenges."
+        image="https://psychologist-app-lyart.vercel.app/og-image.jpg"
+      />
+
       <Header setModal={setModal} />
 
       {modal === "menu" && (

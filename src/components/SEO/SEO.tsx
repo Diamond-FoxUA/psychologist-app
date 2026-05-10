@@ -1,4 +1,5 @@
-// components/SEO.tsx
+import { Helmet } from "react-helmet-async";
+
 interface SEOProps {
   title: string;
   description: string;
@@ -8,7 +9,7 @@ interface SEOProps {
 
 export default function SEO({ title, description, image, url }: SEOProps) {
   return (
-    <>
+    <Helmet>
       {/* Standard SEO */}
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -17,6 +18,7 @@ export default function SEO({ title, description, image, url }: SEOProps) {
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
+      
       {image && <meta property="og:image" content={image} />}
       {url && <meta property="og:url" content={url} />}
 
@@ -24,6 +26,6 @@ export default function SEO({ title, description, image, url }: SEOProps) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-    </>
+    </Helmet>
   );
 }

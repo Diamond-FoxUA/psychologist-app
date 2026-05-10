@@ -83,7 +83,7 @@ export default function Favourites() {
   return (
     <>
       <SEO
-        title="Favorites | Psychologists.service"
+        title="Favorites | Psychologists.services"
         description="Access your saved professional guides."
         image="https://psychologist-app-lyart.vercel.app/og-image.jpg"
       />
