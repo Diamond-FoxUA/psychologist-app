@@ -10,7 +10,7 @@ A responsive web app to explore and book appointments with psychologists. Users 
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 - **Frontend:** React, React Router DOM, React Hook Form, Yup
 - **State & Data Fetching:** TanStack Query
@@ -23,7 +23,7 @@ A responsive web app to explore and book appointments with psychologists. Users 
 
 ---
 
-## Features
+## ✨ Features
 
 - Browse psychologists with detailed profiles (name, avatar, experience, reviews, price, rating, license, specialization, initial consultation, about)
 - Sort psychologists by name, price, and rating
@@ -37,7 +37,7 @@ A responsive web app to explore and book appointments with psychologists. Users 
 
 ---
 
-## Key Integrations
+## 🔗 Key Integrations
 
 - **TanStack Query** handles server state, caching, and efficient data fetching
 - **React Router DOM** manages navigation and protected routes
@@ -46,13 +46,13 @@ A responsive web app to explore and book appointments with psychologists. Users 
 
 ---
 
-## SEO Implementation
+## 🔍  SEO Implementation
 
 The project uses a reusable React SEO component instead of static HTML meta tags.
 
 ---
 
-## Routing
+## 🧭 Routing
 
 * / → Home
 * /psychologists → Psychologists list
@@ -62,7 +62,7 @@ The project uses a reusable React SEO component instead of static HTML meta tags
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ```
 
@@ -78,7 +78,7 @@ npm run dev
 
 ---
 
-## Environment Setup
+## ⚙️ Environment Setup
 
 ```
 
@@ -93,6 +93,6 @@ VITE_APP_ID=your_app_id
 
 ---
 
-## License
+## 📄 License
 
-MIT License
+This project is licensed under the MIT License.
