@@ -87,10 +87,9 @@ export default function Psychologists() {
 
   return (
     <>
-      <SEO
-        title="Psychologists | Psychologists.services"
-        description="Discover professional guidance to unlock your potential."
-        image="https://psychologist-app-lyart.vercel.app/og-image.jpg"
+      <SEO 
+        title="Our Specialists | Psychologists.Services"
+        description="Choose the best professional for your needs."
       />
 
       <section className={`section ${css.section}`}>

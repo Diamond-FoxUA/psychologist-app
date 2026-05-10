@@ -8,7 +8,6 @@ export default function NotFound() {
       <SEO
         title="Page not found | Psychologists.services"
         description="Opps.. page not found."
-        image="https://psychologist-app-lyart.vercel.app/og-image.jpg"
       />
 
       <div className={`container ${css.container}`}>
